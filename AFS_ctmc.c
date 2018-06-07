@@ -295,14 +295,14 @@ void fillExpectedAFS_unnorm(afsStateSpace *S, double *visitMat ,gsl_vector *rate
 
 	m1=expAFS->size1;
 	m2=expAFS->size2;
-	printf("I am here!!!!!!\n");
+	
 	gsl_matrix_set_zero(expAFS);	
 	for(j=0;j<S->nstates;j++){
 		for(k=0;k<m1;k++){
 			for(l=0;l<m2;l++){
 				count = gsl_matrix_int_get(S->states[j]->popMats[0],k,l) +  gsl_matrix_int_get(S->states[j]->popMats[1],k,l);
 				tmpRes = gsl_matrix_get(expAFS,k,l) + (count * gsl_vector_get(rates,j) * visitMat[j]);	
-				printf("tmpRes[%d][%d]: %f rates[j]: %f visits[j]: %f count: %d\n",tmpRes,k,l,gsl_vector_get(rates,j),visitMat[j],count);
+//				printf("tmpRes[%d][%d]: %f rates[j]: %f visits[j]: %f count: %d\n",tmpRes,k,l,gsl_vector_get(rates,j),visitMat[j],count);
 				gsl_matrix_set(expAFS,k,l, tmpRes);
 			}
 		}

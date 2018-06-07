@@ -1,0 +1,8 @@
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 29004 RUNNING AT malecot.biol.berkeley.edu
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================

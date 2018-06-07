@@ -237,9 +237,14 @@ int matrixSum(gsl_matrix_int *m){
 double matrixSumDouble(gsl_matrix *m){
 	int i,j; 
 	double sum=0;
-	for(i=0;i<m->size1;i++)
-		for(j=0;j<m->size2;j++)
+	printf ("Matrix sum\n");
+	for(i=0;i<m->size1;i++){
+		for(j=0;j<m->size2;j++){
 		sum+= gsl_matrix_get(m,i,j);
+		printf ("%f\t",sum);
+		}
+                printf ("\n");
+}
 	return(sum);
 }
 
@@ -1598,7 +1603,7 @@ void fillExpectedAFS_visits_2(afsStateSpace *S, double *visitMat ,gsl_vector *ra
 			for(l=0;l<m2;l++){
 				count = gsl_matrix_int_get(S->states[j]->popMats[0],k,l) +  gsl_matrix_int_get(S->states[j]->popMats[1],k,l);
 				tmpRes = gsl_matrix_get(expAFS,k,l) + (count * gsl_vector_get(rates,j) * visitMat[j]);	
-				printf("tmpRes[%d][%d]: %f rates[j]: %f visits[j]: %f count: %d\n",tmpRes,k,l,gsl_vector_get(rates,j),visitMat[j],count);
+			//	printf("tmpRes[%d][%d]: %f rates[j]: %f visits[j]: %f count: %d\n",tmpRes,k,l,gsl_vector_get(rates,j),visitMat[j],count);
 				gsl_matrix_set(expAFS,k,l, tmpRes);
 			}
 		}
