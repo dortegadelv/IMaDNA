@@ -51,31 +51,31 @@ rm $OutputProportions
 #### 1) The two present day chromosomes are in population 1
 
 OutputSFS=$PrefixIMCLAM."1.txt"
-/opt/IMaDNA/im_clam -s /opt/IMaDNA/stateSpaceFiles/testSS_22 -m /opt/IMaDNA/stateSpaceFiles/testSS_22_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
+/opt/IMaDNA/im_clam -s /opt/IMaDNA/testSS_22 -m /opt/IMaDNA/testSS_22_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
 # Rscript --vanilla CoalTimePresentBeforeAncestral.R $mOne $mTwo $ThetaOne $ThetaTwo $AncTime 1000 1 $MutationRate $OutputProportions
 echo "$PETSC_DIR/arch-linux2-c-debug/bin/mpiexec -n 1 ../../../im_clam-master/im_clam -s ../../../im_clam-master/stateSpaceFiles/testSS_22 -m ../../../im_clam-master/stateSpaceFiles/testSS_22_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime"
 #### 2) One present day chromosome is in population 1, the other one is in population 2
 
 OutputSFS=$PrefixIMCLAM."2.txt"
-/opt/IMaDNA/im_clam -s /opt/IMaDNA/stateSpaceFiles/ss_1_3 -m /opt/IMaDNA/stateSpaceFiles/ss_1_3_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
+/opt/IMaDNA/im_clam -s /opt/IMaDNA/ss_1_3 -m /opt/IMaDNA/ss_1_3_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
 # Rscript --vanilla CoalTimePresentBeforeAncestral.R $mOne $mTwo $ThetaOne $ThetaTwo $AncTime 1000 2 $MutationRate $OutputProportions
 
 #### 3) The two present day chromosomes are in population 2
 
 OutputSFS=$PrefixIMCLAM."3.txt"
-/opt/IMaDNA/im_clam -s /opt/IMaDNA/stateSpaceFiles/ss_1_4 -m /opt/IMaDNA/stateSpaceFiles/ss_1_4_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
+/opt/IMaDNA/im_clam -s /opt/IMaDNA/ss_1_4 -m /opt/IMaDNA/ss_1_4_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
 # Rscript --vanilla CoalTimePresentBeforeAncestral.R $mOne $mTwo $ThetaOne $ThetaTwo $AncTime 1000 3 $MutationRate $OutputProportions
 
 #### 4) The two present day chromosomes have coalesced, and that lineage is now present in population 1
 
 OutputSFS=$PrefixIMCLAM."4.txt"
-/opt/IMaDNA/im_clam -s /opt/IMaDNA/stateSpaceFiles/ss_1_2 -m /opt/IMaDNA/stateSpaceFiles/ss_1_2_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
+/opt/IMaDNA/im_clam -s /opt/IMaDNA/ss_1_2 -m /opt/IMaDNA/ss_1_2_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
 # Rscript --vanilla CoalTimePresentBeforeAncestral.R $mOne $mTwo $ThetaOne $ThetaTwo $AncTime 1000 4 $MutationRate $OutputProportions
 
 #### 5) The two present day chromosomes have coalesced, and that lineage is now present in population 2
 
 OutputSFS=$PrefixIMCLAM."5.txt"
-/opt/IMaDNA/im_clam -s /opt/IMaDNA/stateSpaceFiles/ss_1_3 -m /opt/IMaDNA/stateSpaceFiles/ss_1_3_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
+/opt/IMaDNA/im_clam -s /opt/IMaDNA/ss_1_3 -m /opt/IMaDNA/ss_1_3_mats -exp -x $FractionN2,$FractionNa,$MigRateOneToTwo,$MigRateTwoToOne,$MsDivTime > $OutputSFS
 # Rscript --vanilla CoalTimePresentBeforeAncestral.R $mOne $mTwo $ThetaOne $ThetaTwo $AncTime 1000 5 $MutationRate $OutputProportions
 Rscript --vanilla /opt/IMaDNA/CoalTimePresentBeforeAncestral.R $mOne $mTwo $ThetaOne $ThetaTwo $AncTime $DivisionsInCoalescentCalculations 6 $MutationRate $OutputProportions
 
