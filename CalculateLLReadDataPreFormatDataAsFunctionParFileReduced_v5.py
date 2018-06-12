@@ -308,8 +308,8 @@ def ModelLogLikelihoodDifParameterization(Pars):
 	# print "Coal Div Number = " + str(CoalDivNumber)
 	# sys.exit("All good here")
 	### To run the bash process use cmd = subprocess.Popen(['bash', './FirstLLTestGetSFSWithAncestralMaterial.sh'])
-	subprocess.call(["bash", "./GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(M1), str(M2), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
-	print("bash ./GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
+	subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(M1), str(M2), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
+	print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
 	# sys.exit("Until here")
 	SFSFileName = OutputSFS
 	# SiteLLFileName = InputFile
