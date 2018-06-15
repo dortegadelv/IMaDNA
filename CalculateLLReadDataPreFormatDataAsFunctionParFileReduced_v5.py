@@ -468,38 +468,38 @@ for line in ParameterFile:
 			FourNm2_start = Test2[1]
 			FourNm2_startflag = 1
 		if (Test2Lower == 'n1boundaries'):
-			LowN1Boundary = Test2[1]
-			UpN1Boundary = Test2[2]
+			LowN1Boundary = float(Test2[1])
+			UpN1Boundary = float(Test2[2])
 			if (LowN1Boundary > UpN1Boundary):
 				print "Error Low N1 boundary " + str(LowN1Boundary) + " is bigger than upper boundary" + str(UpN1Boundary)
 				sys.exit()
 		if (Test2Lower == 'n2boundaries'):
-			LowN2Boundary = Test2[1]
-			UpN2Boundary = Test2[2]
+			LowN2Boundary = float(Test2[1])
+			UpN2Boundary = float(Test2[2])
 			if (LowN2Boundary > UpN2Boundary):
 				print "Error Low N2 boundary " + str(LowN2Boundary) + " is bigger than upper boundary" + str(UpN2Boundary)
 				sys.exit()
 		if (Test2Lower == 'naboundaries'):
-			LowNABoundary = Test2[1]
-			UpNABoundary = Test2[2]
+			LowNABoundary = float(Test2[1])
+			UpNABoundary = float(Test2[2])
 			if (LowNABoundary > UpNABoundary):
 				print "Error Low NA boundary " + str(LowNABoundary) + " is bigger than upper boundary" + str(UpNABoundary)
 				sys.exit()
 		if (Test2Lower == 'divtimeboundaries'):
-			LowDivTimeBoundary = Test2[1]
-			UpDivTimeBoundary = Test2[2]
+			LowDivTimeBoundary = float(Test2[1])
+			UpDivTimeBoundary = float(Test2[2])
 			if (LowDivTimeBoundary > UpDivTimeBoundary):
 				print "Error Low DivTime boundary " + str(LowDivTimeBoundary) + " is bigger than upper boundary" + str(UpDivTimeBoundary)
 				sys.exit()
 		if (Test2Lower == '4nm1boundaries'):
-			LowFourNm1Boundary = Test2[1]
-			UpFourNm1Boundary = Test2[2]
+			LowFourNm1Boundary = float(Test2[1])
+			UpFourNm1Boundary = float(Test2[2])
 			if (LowFourNm1Boundary > UpFourNm1Boundary):
 				print "Error Low FourNm1 boundary " + str(LowFourNm1Boundary) + " is bigger than upper boundary" + str(UpFourNm1Boundary)
 				sys.exit()
 		if (Test2Lower == '4nm2boundaries'):
-			LowFourNm2Boundary = Test2[1]
-			UpFourNm2Boundary = Test2[2]
+			LowFourNm2Boundary = float(Test2[1])
+			UpFourNm2Boundary = float(Test2[2])
 			if (LowFourNm2Boundary > UpFourNm2Boundary):
 				print "Error Low FourNm2 boundary " + str(LowFourNm2Boundary) + " is bigger than upper boundary" + str(UpFourNm2Boundary)
 				sys.exit()
