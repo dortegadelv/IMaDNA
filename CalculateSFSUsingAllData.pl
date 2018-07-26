@@ -67,9 +67,9 @@ $BranchLengthSingletonSum = 0;
 for ($k = 0; $k < $RowNumber; $k++){
 for ($j = 0; $j < scalar(@LineElements); $j++){
 if ( ( $k == 0 ) && ( $j == 0 )){
-$ReformatBranchLengths[$k][$j] = 0;
+$ReformatBranchLengths[$j][$k] = 0;
 } else {
-$ReformatBranchLengths[$k][$j] = $ThisSFS[$k][$j] - $PastBL;
+$ReformatBranchLengths[$j][$k] = $ThisSFS[$k][$j] - $PastBL;
 }
 if ( $k == 1 ){
 $BranchLengthSingletonSum = $BranchLengthSingletonSum + $ThisSFS[$k][$j];
