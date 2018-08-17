@@ -308,8 +308,12 @@ def ModelLogLikelihoodDifParameterization(Pars):
 	# print "Coal Div Number = " + str(CoalDivNumber)
 	# sys.exit("All good here")
 	### To run the bash process use cmd = subprocess.Popen(['bash', './FirstLLTestGetSFSWithAncestralMaterial.sh'])
-	subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(M1), str(M2), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
-	print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
+	if (PresentTimeToFossilMigFlag == 0):
+		subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(M1), str(M2), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
+		print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
+	if (PresentTimeToFossilMigFlag == 1):
+		subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(0.0), str(0.0), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
+		print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
 	# sys.exit("Until here")
 	SFSFileName = OutputSFS
 	# SiteLLFileName = InputFile
@@ -406,6 +410,7 @@ NA_startflag = 0
 DivTime_startflag = 0
 FourNm1_startflag = 0
 FourNm2_startflag = 0
+PresentTimeToFossilMigFlag = 0
 LowN1Boundary = 100
 UpN1Boundary = 100000
 LowN2Boundary = 100
@@ -505,6 +510,8 @@ for line in ParameterFile:
 				sys.exit()
 		if (Test2Lower == 'iterations'):
 			Iterations = int(Test2[1])
+		if (Test2Lower == 'presentdaymigflag'):
+			PresentTimeToFossilMigFlag = int(Test2[1])
 		if (Test2Lower == 'alliterationsfile'):
 			AllIterationsFlag = 1
 			AllIterationsFile = Test2[1]
