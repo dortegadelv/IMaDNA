@@ -312,8 +312,8 @@ def ModelLogLikelihoodDifParameterization(Pars):
 		subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(M1), str(M2), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
 		print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
 	if (PresentTimeToFossilMigFlag == 1):
-		subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh", str(N1), str(N2), str(NA), str(TDiv), str(0.0), str(0.0), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
-		print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigration.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
+		subprocess.call(["bash", "/opt/IMaDNA/GetSFSWithAncestralMaterialNoMigrationNoPresentMig.sh", str(N1), str(N2), str(NA), str(TDiv), str(M1), str(M2), str(AncTime), F_CurrentPrefix, F_InputProportions, F_OutputSFS, str(F_CoalDivNumber)])
+		print("bash /opt/IMaDNA/GetSFSWithAncestralMaterialNoMigrationNoPresentMig.sh" + " " + str(N1) + " " + str(N2) + " " + str(NA) + " " + str(TDiv) + " " + str(M1) + " " + str(M2) + " " + str(AncTime) + " " + str(F_CurrentPrefix) + " " + str(F_InputProportions) + " " + str(F_OutputSFS) + " " + str(F_CoalDivNumber))
 	# sys.exit("Until here")
 	SFSFileName = OutputSFS
 	# SiteLLFileName = InputFile
