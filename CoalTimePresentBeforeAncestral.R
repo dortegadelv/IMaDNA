@@ -230,7 +230,16 @@ AllFT_11 <- c(AllFT_11,FT_11)
 # print (ProbNoMutation)
 # print ("Length of doubleton branch")
 # print (ProbNoDoubleton)
+if (ProbNoMutation == 'NaN'){
+ProbNoMutation = 0
+}
+if (ProbNoDoubleton == 'NaN'){
+ProbNoDoubleton = 0
+}
+
 OutputVector <- c(OutputVector,ProbNoMutation,ProbNoDoubleton)
+# print (OutputVector$V2[5])
+# print (OutputVector$V3[5])
 write.table(t(OutputVector), file = OutputProportionsFile, sep = "\t", append = TRUE, row.names = FALSE, col.names = FALSE)
 }
 
